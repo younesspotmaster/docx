@@ -30,16 +30,24 @@ interface Patch {
 }
 ```
 
+
 | Property | Type                              | Notes    | Possible Values                                                                                                                      |
 | -------- | --------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | type     | `PatchType`                       | Required | `DOCUMENT`, `PARAGRAPH`                                                                                                              |
 | children | `FileChild[] or ParagraphChild[]` | Required | The contents to replace with. A `FileChild` is a `Paragraph` or `Table`, whereas a `ParagraphChild` is typical `Paragraph` children. |
+
+
+The patcher also takes in a `keepOriginalStyles` boolean, which will preserve the styles of the patched text when set to true.
 
 ### How to patch existing document
 
 1. Open your existing word document in your favorite Word Processor
 2. Write tags in the document where you want to patch in a mustache style notation. For example, `{{my_patch}}` and `{{my_second_patch}}`.
 3. Run the patcher with the patches as a key value pair.
+
+### Patching options
+
+
 
 ## Example
 
